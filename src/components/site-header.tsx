@@ -53,7 +53,10 @@ export function SiteHeader() {
       <div className="w-full border-b border-zinc-200 bg-yellow-100">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-2 text-xs">
           <span className="text-zinc-700">Marabá - PA | {currentDate}</span>
-          <nav className="flex flex-wrap items-center gap-2 sm:gap-3" style={cambria}>
+          <nav
+            className="flex flex-wrap items-center gap-2 sm:gap-3"
+            style={cambria}
+          >
             <Link href="#topo" className="hover:underline">
               Home
             </Link>
@@ -80,7 +83,13 @@ export function SiteHeader() {
               title={item.label}
               className="grid h-7 w-7 place-items-center overflow-hidden rounded border border-zinc-300 bg-white p-0.5 shadow-sm transition hover:-translate-y-0.5 hover:shadow"
             >
-              <Image src={item.src} alt={item.label} width={22} height={22} className="h-5 w-5 object-contain" />
+              <Image
+                src={item.src}
+                alt={item.label}
+                width={22}
+                height={22}
+                className="h-5 w-5 object-contain"
+              />
             </a>
           ))}
           <a
@@ -89,7 +98,13 @@ export function SiteHeader() {
             title="E-mail"
             className="rounded border border-zinc-300 bg-white p-0.5 shadow-sm transition hover:-translate-y-0.5 hover:shadow"
           >
-            <Image src="/api/assets/email" alt="Ícone de e-mail" width={22} height={22} className="h-5 w-5" />
+            <Image
+              src="/api/assets/email"
+              alt="Ícone de e-mail"
+              width={22}
+              height={22}
+              className="h-5 w-5"
+            />
           </a>
           <a
             href="#"
@@ -97,7 +112,13 @@ export function SiteHeader() {
             title="Libras"
             className="rounded border border-zinc-300 bg-white p-0.5 shadow-sm transition hover:-translate-y-0.5 hover:shadow"
           >
-            <Image src="/api/assets/libras" alt="Ícone de Libras" width={22} height={22} className="h-5 w-5" />
+            <Image
+              src="/api/assets/libras"
+              alt="Ícone de Libras"
+              width={22}
+              height={22}
+              className="h-5 w-5"
+            />
           </a>
           <button
             type="button"
@@ -105,53 +126,59 @@ export function SiteHeader() {
             className="flex h-8 items-center gap-1 rounded border border-zinc-300 bg-white px-2 py-1 text-[11px] font-semibold text-zinc-700 shadow-sm transition hover:-translate-y-0.5 hover:shadow"
             title={darkMode ? "Ativar modo claro" : "Ativar modo escuro"}
           >
-            <Image src="/api/assets/darkmode" alt="Dark mode" width={18} height={18} className="h-4 w-4" />
+            <Image
+              src="/api/assets/darkmode"
+              alt="Dark mode"
+              width={18}
+              height={18}
+              className="h-4 w-4"
+            />
             <span>{darkMode ? "☀" : "☾"}</span>
           </button>
         </div>
       </div>
 
       <div className="mx-auto max-w-6xl px-4">
-        <div className="flex flex-col items-center gap-0 py-4">
-          {/* Logo */}
-          <div className="flex w-full items-center justify-between md:justify-center">
+        <div className="flex flex-col items-center gap-0 py-3">
+          {/* Logo - Desktop and Mobile */}
+          <div className="flex w-full items-center justify-between gap-3 md:justify-center md:gap-0">
             <button
               type="button"
               aria-expanded={editoriasOpen}
               aria-controls="editorias-menu"
               onClick={() => setEditoriasOpen((current) => !current)}
-              className="flex h-9 w-10 items-center justify-center rounded border border-zinc-300 bg-white text-zinc-900 shadow-sm md:hidden"
+              className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded border border-zinc-300 bg-white text-zinc-900 shadow-sm md:hidden"
               title="Abrir menu"
             >
               <span className="sr-only">Abrir menu</span>
               <span className="flex flex-col gap-1">
-                <span className="block h-0.5 w-5 bg-current" />
-                <span className="block h-0.5 w-5 bg-current" />
-                <span className="block h-0.5 w-5 bg-current" />
+                <span className="block h-0.5 w-4 bg-current" />
+                <span className="block h-0.5 w-4 bg-current" />
+                <span className="block h-0.5 w-4 bg-current" />
               </span>
             </button>
             <Image
-              src="/api/assets/logoBlue"
+              src="/api/assets/logo"
               alt="Jornal Marabá"
               width={520}
               height={120}
               priority
-              className="h-auto w-full max-w-[300px] object-contain sm:max-w-[520px]"
+              className="h-auto w-full max-w-[280px] object-contain sm:max-w-[520px]"
             />
           </div>
 
           {/* Menu de Editorias */}
-          <div className="w-full border-t border-zinc-300 py-3" style={cambria}>
+          <div className="w-full border-t border-zinc-300 pt-2" style={cambria}>
             <nav
               id="editorias-menu"
               className={`${
                 editoriasOpen ? "flex" : "hidden"
-              } flex-col items-center gap-2.5 text-xs font-semibold md:flex md:flex-row md:flex-wrap md:justify-center md:gap-x-4 md:gap-y-1.5 md:text-sm md:border-b md:border-zinc-300 md:pb-2`}
+              } flex-col items-center gap-1.5 text-xs font-semibold md:flex md:flex-row md:flex-wrap md:justify-center md:gap-x-3.5 md:gap-y-1 md:text-sm md:pb-2`}
             >
               {NAV_EDITORIAS.map((item) => (
-                <Link 
-                  key={item} 
-                  href={item === "Colunistas" ? "#materias" : "#"} 
+                <Link
+                  key={item}
+                  href={item === "Colunistas" ? "#materias" : "#"}
                   onClick={closeEditorias}
                   className="transition hover:text-amber-600"
                 >

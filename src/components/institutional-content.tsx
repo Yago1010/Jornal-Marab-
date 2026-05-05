@@ -275,7 +275,7 @@ export function FaleConoscoText() {
       <p>
         Aqui <strong>você sugere matérias, faz denúncias e elogios</strong> para
         juntos fazermos do digital <strong>Jornal Marabá</strong> e do impresso
-        <strong>Jornal da Cidade Marabá</strong> os veículos de comunicação com
+        <strong> Jornal da Cidade Marabá</strong> os veículos de comunicação com
         responsabilidade, credibilidade e principalmente sua participação!
       </p>
       <p>Obtenha informações também sobre:</p>
