@@ -113,39 +113,36 @@ export function SiteHeader() {
 
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex flex-col items-center gap-3 py-5">
-          <div className="flex w-full items-center justify-center">
+          <div className="grid w-full grid-cols-[40px_1fr_40px] items-center md:flex md:justify-center">
+            <button
+              type="button"
+              aria-expanded={editoriasOpen}
+              aria-controls="editorias-menu"
+              onClick={() => setEditoriasOpen((current) => !current)}
+              className="flex h-9 w-10 items-center justify-center rounded border border-zinc-300 bg-white text-zinc-900 shadow-sm md:hidden"
+              title="Abrir menu"
+            >
+              <span className="sr-only">Abrir menu</span>
+              <span className="flex flex-col gap-1">
+                <span className="block h-0.5 w-5 bg-current" />
+                <span className="block h-0.5 w-5 bg-current" />
+                <span className="block h-0.5 w-5 bg-current" />
+              </span>
+            </button>
             <Image
               src="/api/assets/logoBlue"
               alt="Jornal Marabá"
               width={520}
               height={120}
               priority
-              className="h-auto w-full max-w-[360px] object-contain sm:max-w-[520px]"
+              className="col-start-2 h-auto w-full max-w-[300px] justify-self-center object-contain sm:max-w-[520px]"
             />
           </div>
 
           <div className="w-full border-y border-zinc-300 py-2" style={cambria}>
-            <div className="flex items-center justify-center md:hidden">
-              <button
-                type="button"
-                aria-expanded={editoriasOpen}
-                aria-controls="editorias-menu"
-                onClick={() => setEditoriasOpen((current) => !current)}
-                className="flex h-9 w-10 items-center justify-center rounded border border-zinc-300 bg-white text-zinc-900 shadow-sm"
-                title="Abrir menu"
-              >
-                <span className="sr-only">Abrir menu</span>
-                <span className="flex flex-col gap-1">
-                  <span className="block h-0.5 w-5 bg-current" />
-                  <span className="block h-0.5 w-5 bg-current" />
-                  <span className="block h-0.5 w-5 bg-current" />
-                </span>
-              </button>
-            </div>
-
             <nav
               id="editorias-menu"
-              className={`${editoriasOpen ? "flex" : "hidden"} mt-2 flex-col items-center gap-2 text-xs font-semibold md:mt-0 md:flex md:flex-row md:flex-wrap md:justify-center md:gap-x-3 md:gap-y-1 md:text-sm`}
+              className={`${editoriasOpen ? "flex" : "hidden"} flex-col items-center gap-2 text-xs font-semibold md:flex md:flex-row md:flex-wrap md:justify-center md:gap-x-3 md:gap-y-1 md:text-sm`}
             >
               {NAV_EDITORIAS.map((item) => (
                 <Link key={item} href={item === "Colunistas" ? "#materias" : "#"} onClick={closeEditorias}>
