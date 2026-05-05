@@ -112,8 +112,9 @@ export function SiteHeader() {
       </div>
 
       <div className="mx-auto max-w-6xl px-4">
-        <div className="flex flex-col items-center gap-3 py-5">
-          <div className="grid w-full grid-cols-[40px_1fr_40px] items-center md:flex md:justify-center">
+        <div className="flex flex-col items-center gap-0 py-4">
+          {/* Logo */}
+          <div className="flex w-full items-center justify-between md:justify-center">
             <button
               type="button"
               aria-expanded={editoriasOpen}
@@ -135,17 +136,25 @@ export function SiteHeader() {
               width={520}
               height={120}
               priority
-              className="col-start-2 h-auto w-full max-w-[300px] justify-self-center object-contain sm:max-w-[520px]"
+              className="h-auto w-full max-w-[300px] object-contain sm:max-w-[520px]"
             />
           </div>
 
-          <div className="w-full border-y border-zinc-300 py-2" style={cambria}>
+          {/* Menu de Editorias */}
+          <div className="w-full border-t border-zinc-300 py-3" style={cambria}>
             <nav
               id="editorias-menu"
-              className={`${editoriasOpen ? "flex" : "hidden"} flex-col items-center gap-2 text-xs font-semibold md:flex md:flex-row md:flex-wrap md:justify-center md:gap-x-3 md:gap-y-1 md:text-sm`}
+              className={`${
+                editoriasOpen ? "flex" : "hidden"
+              } flex-col items-center gap-2.5 text-xs font-semibold md:flex md:flex-row md:flex-wrap md:justify-center md:gap-x-4 md:gap-y-1.5 md:text-sm md:border-b md:border-zinc-300 md:pb-2`}
             >
               {NAV_EDITORIAS.map((item) => (
-                <Link key={item} href={item === "Colunistas" ? "#materias" : "#"} onClick={closeEditorias}>
+                <Link 
+                  key={item} 
+                  href={item === "Colunistas" ? "#materias" : "#"} 
+                  onClick={closeEditorias}
+                  className="transition hover:text-amber-600"
+                >
                   {item}
                 </Link>
               ))}
