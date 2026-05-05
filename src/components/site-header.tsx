@@ -1,18 +1,21 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
 import { NAV_EDITORIAS } from "@/lib/content";
 
 const socialLinks = [
-  { label: "WhatsApp", href: "#", position: "0% 50%" },
-  { label: "Instagram", href: "#", position: "50% 50%" },
-  { label: "Facebook", href: "#", position: "100% 50%" },
+  { label: "WhatsApp", href: "#", src: "/api/assets/whatsapp" },
+  { label: "Instagram", href: "#", src: "/api/assets/instagram" },
+  { label: "Facebook", href: "#", src: "/api/assets/facebook" },
 ];
 
+const cambria = { fontFamily: "Cambria, Georgia, serif" };
+
 export function SiteHeader() {
+  const [editoriasOpen, setEditoriasOpen] = useState(false);
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     if (typeof window === "undefined") return false;
 
@@ -41,12 +44,16 @@ export function SiteHeader() {
     setDarkMode((current) => !current);
   };
 
+  const closeEditorias = () => {
+    setEditoriasOpen(false);
+  };
+
   return (
     <header className="border-b border-zinc-300 bg-white shadow-sm">
       <div className="w-full border-b border-zinc-200 bg-yellow-100">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-2 text-xs">
           <span className="text-zinc-700">Marabá - PA | {currentDate}</span>
-          <nav className="flex flex-wrap items-center gap-2 sm:gap-3">
+          <nav className="flex flex-wrap items-center gap-2 sm:gap-3" style={cambria}>
             <Link href="#topo" className="hover:underline">
               Home
             </Link>
@@ -71,17 +78,9 @@ export function SiteHeader() {
               href={item.href}
               aria-label={item.label}
               title={item.label}
-              className="h-7 w-7 overflow-hidden rounded border border-zinc-300 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow"
+              className="grid h-7 w-7 place-items-center overflow-hidden rounded border border-zinc-300 bg-white p-0.5 shadow-sm transition hover:-translate-y-0.5 hover:shadow"
             >
-              <span
-                className="block h-full w-full"
-                style={{
-                  backgroundImage: "url('/api/assets/social')",
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "300% 100%",
-                  backgroundPosition: item.position,
-                }}
-              />
+              <Image src={item.src} alt={item.label} width={22} height={22} className="h-5 w-5 object-contain" />
             </a>
           ))}
           <a
@@ -107,27 +106,54 @@ export function SiteHeader() {
             title={darkMode ? "Ativar modo claro" : "Ativar modo escuro"}
           >
             <Image src="/api/assets/darkmode" alt="Dark mode" width={18} height={18} className="h-4 w-4" />
-            <span>{darkMode ? "☀" : "🌙"}</span>
+            <span>{darkMode ? "☀" : "☾"}</span>
           </button>
         </div>
       </div>
 
       <div className="mx-auto max-w-6xl px-4">
-
         <div className="flex flex-col items-center gap-3 py-5">
-          <div className="flex items-center gap-2 sm:gap-3">
-            <h1 className="text-4xl font-bold text-green-700 sm:text-5xl md:text-6xl">Jornal</h1>
-            <Image src="/api/assets/logo" alt="Logo Jornal Marabá" width={108} height={60} className="h-12 w-auto md:h-14" />
-            <h1 className="text-4xl font-bold text-green-700 sm:text-5xl md:text-6xl">Marabá</h1>
+          <div className="flex w-full items-center justify-center">
+            <Image
+              src="/api/assets/logoBlue"
+              alt="Jornal Marabá"
+              width={520}
+              height={120}
+              priority
+              className="h-auto w-full max-w-[360px] object-contain sm:max-w-[520px]"
+            />
           </div>
 
-          <nav className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 border-y border-zinc-300 py-2 text-xs font-semibold sm:text-sm">
-            {NAV_EDITORIAS.map((item) => (
-              <span key={item} className="after:mx-2 after:content-['-'] last:after:content-['']">
-                <Link href={item === "Colunistas" ? "#materias" : "#"}>{item}</Link>
-              </span>
-            ))}
-          </nav>
+          <div className="w-full border-y border-zinc-300 py-2" style={cambria}>
+            <div className="flex items-center justify-center md:hidden">
+              <button
+                type="button"
+                aria-expanded={editoriasOpen}
+                aria-controls="editorias-menu"
+                onClick={() => setEditoriasOpen((current) => !current)}
+                className="flex h-9 w-10 items-center justify-center rounded border border-zinc-300 bg-white text-zinc-900 shadow-sm"
+                title="Abrir menu"
+              >
+                <span className="sr-only">Abrir menu</span>
+                <span className="flex flex-col gap-1">
+                  <span className="block h-0.5 w-5 bg-current" />
+                  <span className="block h-0.5 w-5 bg-current" />
+                  <span className="block h-0.5 w-5 bg-current" />
+                </span>
+              </button>
+            </div>
+
+            <nav
+              id="editorias-menu"
+              className={`${editoriasOpen ? "flex" : "hidden"} mt-2 flex-col items-center gap-2 text-xs font-semibold md:mt-0 md:flex md:flex-row md:flex-wrap md:justify-center md:gap-x-3 md:gap-y-1 md:text-sm`}
+            >
+              {NAV_EDITORIAS.map((item) => (
+                <Link key={item} href={item === "Colunistas" ? "#materias" : "#"} onClick={closeEditorias}>
+                  {item}
+                </Link>
+              ))}
+            </nav>
+          </div>
         </div>
       </div>
     </header>

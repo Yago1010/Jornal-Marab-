@@ -5,17 +5,19 @@ import { NextResponse } from "next/server";
 
 const assetMap: Record<string, string> = {
   logo: "Logo-jornal.png",
-  social: "Ícones cabeçalho.png",
+  logoBlue: "logo-azul.png",
+  logoTrace: "Logocomtraco.png",
+  whatsapp: "whatssap.png",
+  instagram: "instagram.png",
+  facebook: "facebook.png",
+  social: "ícones cabeçalho.png",
   email: "Ícone do e-mail _ cabeçalho.png",
   libras: "Libras.png",
   darkmode: "Dark Mode.png",
   pesquisa: "Fundo e diagramação Pesquisa Popular.png",
 };
 
-export async function GET(
-  _request: Request,
-  { params }: { params: Promise<{ asset: string }> },
-) {
+export async function GET(_request: Request, { params }: { params: Promise<{ asset: string }> }) {
   const { asset } = await params;
   const fileName = assetMap[asset];
 
