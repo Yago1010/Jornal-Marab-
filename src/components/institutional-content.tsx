@@ -3,7 +3,6 @@ import Image from "next/image";
 const roundedFont = {
   fontFamily: '"Arial Rounded MT Bold", Arial, Helvetica, sans-serif',
 };
-const arialFont = { fontFamily: "Arial, Helvetica, sans-serif" };
 const tahomaFont = { fontFamily: "Tahoma, Arial, sans-serif" };
 
 const privacyDetails = [
@@ -104,9 +103,11 @@ const privacyDetails = [
 export function InstitutionalTitle({
   before,
   after,
+  logoSrc = "/api/assets/logo",
 }: {
   before: string;
   after: string;
+  logoSrc?: string;
 }) {
   return (
     <div
@@ -115,8 +116,8 @@ export function InstitutionalTitle({
     >
       <h1>{before}</h1>
       <Image
-        src="/api/assets/logoTrace"
-        alt=""
+        src={logoSrc}
+        alt="Logo Jornal Marabá"
         width={54}
         height={28}
         className="h-7 w-auto sm:h-8"
@@ -132,7 +133,7 @@ export function QuemSomosText({ framed = true }: { framed?: boolean }) {
     : "space-y-4 text-left leading-snug text-zinc-800";
 
   return (
-    <div className={className} style={arialFont}>
+    <div className={className} style={roundedFont}>
       <p>
         <strong>Bem-vindo ao Jornal Marabá;</strong> muito além de um portal de
         notícias por reunir informações com responsabilidade e credibilidade,

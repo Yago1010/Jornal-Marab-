@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
 import { NAV_EDITORIAS } from "@/lib/content";
+import logoJornal from "../../imagem-do-site/Logo-jornal.png";
 
 const socialLinks = [
   { label: "WhatsApp", href: "#", src: "/api/assets/whatsapp" },
@@ -15,7 +16,6 @@ const socialLinks = [
 const cambria = { fontFamily: "Cambria, Georgia, serif" };
 
 export function SiteHeader() {
-  const [editoriasOpen, setEditoriasOpen] = useState(false);
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     if (typeof window === "undefined") return false;
 
@@ -42,10 +42,6 @@ export function SiteHeader() {
 
   const toggleDarkMode = () => {
     setDarkMode((current) => !current);
-  };
-
-  const closeEditorias = () => {
-    setEditoriasOpen(false);
   };
 
   return (
@@ -139,48 +135,57 @@ export function SiteHeader() {
       </div>
 
       <div className="mx-auto max-w-6xl px-4">
-        <div className="flex flex-col items-center gap-0 py-3">
-          {/* Logo - Desktop and Mobile */}
-          <div className="relative flex w-full items-center justify-center md:justify-center">
+        <div className="flex flex-col items-center gap-0 py-2 sm:py-3">
+          {/* Logo + Texto */}
+          <div className="flex w-full items-center justify-center gap-2 sm:gap-3">
+            {/* Botão de hambúrguer apenas visual, sem ação */}
             <button
               type="button"
-              aria-expanded={editoriasOpen}
-              aria-controls="editorias-menu"
-              onClick={() => setEditoriasOpen((current) => !current)}
-              className="absolute left-0 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded border border-zinc-300 bg-white text-zinc-900 shadow-sm md:hidden"
-              title="Abrir menu"
+              disabled
+              className="mr-1 flex h-8 w-8 items-center justify-center rounded border border-zinc-300 bg-white text-zinc-900 shadow-sm md:hidden"
+              title="Menu"
             >
-              <span className="sr-only">Abrir menu</span>
+              <span className="sr-only">Menu</span>
               <span className="flex flex-col gap-1">
                 <span className="block h-0.5 w-4 bg-current" />
                 <span className="block h-0.5 w-4 bg-current" />
                 <span className="block h-0.5 w-4 bg-current" />
               </span>
             </button>
-            <Image
-              src="/api/assets/logo"
-              alt="Jornal Marabá"
-              width={520}
-              height={120}
-              priority
-              className="h-auto w-full max-w-[280px] object-contain sm:max-w-[520px]"
-            />
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span
+                className="font-bold text-green-700"
+                style={{ fontFamily: "Cambria, Georgia, serif", fontSize: "40px" }}
+              >
+                Jornal
+              </span>
+              <Image
+                src={logoJornal}
+                alt="Logo Jornal Marabá"
+                width={48}
+                height={48}
+                className="h-8 w-auto object-contain"
+              />
+              <span
+                className="font-bold text-green-700"
+                style={{ fontFamily: "Cambria, Georgia, serif", fontSize: "40px" }}
+              >
+                Marabá
+              </span>
+            </div>
           </div>
 
           {/* Menu de Editorias */}
-          <div className="w-full border-t border-zinc-300 pt-2" style={cambria}>
-            <nav
-              id="editorias-menu"
-              className={`${
-                editoriasOpen ? "flex" : "hidden"
-              } flex-col items-center gap-1.5 text-xs font-semibold md:flex md:flex-row md:flex-wrap md:justify-center md:gap-x-3.5 md:gap-y-1 md:text-sm md:pb-2`}
-            >
+          <div
+            className="w-full border-t border-zinc-300 pb-0.5 pt-1"
+            style={cambria}
+          >
+            <nav className="grid grid-cols-4 gap-x-1 gap-y-1 text-xs font-semibold md:flex md:flex-wrap md:justify-center md:gap-x-2 md:gap-y-0.5 md:text-sm">
               {NAV_EDITORIAS.map((item) => (
                 <Link
                   key={item}
                   href={item === "Colunistas" ? "#materias" : "#"}
-                  onClick={closeEditorias}
-                  className="transition hover:text-amber-600"
+                  className="py-1 text-center transition hover:text-amber-600"
                 >
                   {item}
                 </Link>

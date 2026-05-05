@@ -5,8 +5,8 @@ import { NextResponse } from "next/server";
 
 const assetMap: Record<string, string> = {
   logo: "Logo-jornal.png",
-  logoBlue: "logo-azul.png",
-  logoTrace: "Logocomtraco.png",
+  logoBlue: "Logo-jornal.png",
+  logoTrace: "Logo-jornal.png",
   whatsapp: "whatssap.png",
   instagram: "instagram.png",
   facebook: "facebook.png",
@@ -17,12 +17,18 @@ const assetMap: Record<string, string> = {
   pesquisa: "Fundo e diagramação Pesquisa Popular.png",
 };
 
-export async function GET(_request: Request, { params }: { params: Promise<{ asset: string }> }) {
+export async function GET(
+  _request: Request,
+  { params }: { params: Promise<{ asset: string }> },
+) {
   const { asset } = await params;
   const fileName = assetMap[asset];
 
   if (!fileName) {
-    return NextResponse.json({ message: "Asset não encontrado." }, { status: 404 });
+    return NextResponse.json(
+      { message: "Asset não encontrado." },
+      { status: 404 },
+    );
   }
 
   const filePath = join(process.cwd(), "imagem-do-site", fileName);
