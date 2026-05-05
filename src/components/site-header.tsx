@@ -141,13 +141,13 @@ export function SiteHeader() {
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex flex-col items-center gap-0 py-3">
           {/* Logo - Desktop and Mobile */}
-          <div className="flex w-full items-center justify-between gap-3 md:justify-center md:gap-0">
+          <div className="relative flex w-full items-center justify-center md:justify-center">
             <button
               type="button"
               aria-expanded={editoriasOpen}
               aria-controls="editorias-menu"
               onClick={() => setEditoriasOpen((current) => !current)}
-              className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded border border-zinc-300 bg-white text-zinc-900 shadow-sm md:hidden"
+              className="absolute left-0 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded border border-zinc-300 bg-white text-zinc-900 shadow-sm md:hidden"
               title="Abrir menu"
             >
               <span className="sr-only">Abrir menu</span>
