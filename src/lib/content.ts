@@ -4,6 +4,7 @@ export const NAV_EDITORIAS = [
   "Notícias",
   "Política",
   "Saúde",
+  "Empregos",
   "Colunistas",
   "Veículos",
   "Imóveis",
@@ -14,17 +15,35 @@ export const NAV_EDITORIAS = [
 export const COUNCILOR_DETAILS = [
   { name: "Aerton Grande - União Brasil", fullName: "Aerton Lima da Cruz" },
   { name: "Cabo Rodrigo - PL", fullName: "Rodrigo Lima da Silva" },
-  { name: "Dato do Ônibus - União Brasil", fullName: "Deodato do Espírito Santo" },
+  {
+    name: "Dato do Ônibus - União Brasil",
+    fullName: "Deodato do Espírito Santo",
+  },
   { name: "Dean Guimarães - PSD", fullName: "Claudean Pereira Guimarães" },
-  { name: "Dra. Cristina Mutran - MDB", fullName: "Maria Cristina Coimbra Mutran" },
-  { name: "Fernando Henrique - PL", fullName: "Fernando Henrique Pereira da Silva" },
+  {
+    name: "Dra. Cristina Mutran - MDB",
+    fullName: "Maria Cristina Coimbra Mutran",
+  },
+  {
+    name: "Fernando Henrique - PL",
+    fullName: "Fernando Henrique Pereira da Silva",
+  },
   { name: "Ilker Moraes - MDB", fullName: "Ilker Moraes Ferreira" },
   { name: "Jocenilson Souza - PRD", fullName: "Jocenilson Silva Souza" },
-  { name: "Maiana Stringari - PDT", fullName: "Maiana Clara Rodrigues Stringari" },
+  {
+    name: "Maiana Stringari - PDT",
+    fullName: "Maiana Clara Rodrigues Stringari",
+  },
   { name: "Marcelo Alves - PT", fullName: "Marcelo Alves dos Santos" },
-  { name: "Márcio do São Félix - PSDB", fullName: "Antônio Márcio Farias Gonçalves" },
+  {
+    name: "Márcio do São Félix - PSDB",
+    fullName: "Antônio Márcio Farias Gonçalves",
+  },
   { name: "Marcos Andrade - PSD", fullName: "Marcos Almeida Sousa de Andrade" },
-  { name: "Marcos Paulo da Agricultura - PDT", fullName: "Marcos Paulo E. Pereira" },
+  {
+    name: "Marcos Paulo da Agricultura - PDT",
+    fullName: "Marcos Paulo E. Pereira",
+  },
   { name: "Orlando Elias - PSB", fullName: "Orlando da Silva Elias" },
   { name: "Pacheco - PL", fullName: "Jimmyson Mesquita Pacheco" },
   { name: "Pastor Ronisteu - PL", fullName: "Ronisteu da Silva Araújo" },
@@ -32,7 +51,10 @@ export const COUNCILOR_DETAILS = [
   { name: "Priscila Veloso - PSD", fullName: "Priscila Duarte Veloso Silva" },
   { name: "Ronaldo da 33 - PDT", fullName: "Ronaldo Alves Araújo" },
   { name: "Ubirajara Sompré - MDB", fullName: "Ubirajara Nazareno Sompré" },
-  { name: "Vanda Américo - União Brasil", fullName: "Vanda Régia Américo Gomes" },
+  {
+    name: "Vanda Américo - União Brasil",
+    fullName: "Vanda Régia Américo Gomes",
+  },
 ];
 
 export const COUNCILORS = COUNCILOR_DETAILS.map((councilor) => councilor.name);

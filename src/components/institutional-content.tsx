@@ -1,6 +1,8 @@
 import Image from "next/image";
 
-const roundedFont = { fontFamily: '"Arial Rounded MT Bold", Arial, Helvetica, sans-serif' };
+const roundedFont = {
+  fontFamily: '"Arial Rounded MT Bold", Arial, Helvetica, sans-serif',
+};
 const arialFont = { fontFamily: "Arial, Helvetica, sans-serif" };
 const tahomaFont = { fontFamily: "Tahoma, Arial, sans-serif" };
 
@@ -36,11 +38,16 @@ const privacyDetails = [
   {
     text: "IV.1. Em casos específicos, em que há transferência patrimonial, troca de conteúdo, dentre outras hipóteses, ao prestar as informações relativas aos seus dados pessoais, o usuário estabelece vínculo contratual com o JORNAL MARABÁ, regido por esta Política de Privacidade e com os demais termos e condições que regulam o uso do Portal, pelos usuários, no período.",
   },
-  { title: "V. Das Seções Condicionadas à Registro Prévio e Chaves de Acesso (Login e Senha)" },
+  {
+    title:
+      "V. Das Seções Condicionadas à Registro Prévio e Chaves de Acesso (Login e Senha)",
+  },
   {
     text: "V.1. Algumas seções do JORNAL MARABÁ podem requerer registro prévio do usuário, ficando o acesso condicionado à utilização de nome (“Login”) e senha, escolhidos e determinados pelo JORNAL MARABÁ. Tal acesso, consequentemente, é pessoal e intransferível, ficando cada usuário registrado responsável pela segurança de seu Login e senha, bem como pelo uso feito sob tais chaves de acesso.",
   },
-  { title: "VI. Das Responsabilidades do JORNAL MARABÁ e Limitações Aplicáveis" },
+  {
+    title: "VI. Das Responsabilidades do JORNAL MARABÁ e Limitações Aplicáveis",
+  },
   {
     text: "VI.1. O JORNAL MARABÁ responsabiliza-se por manter os dados salvaguardados e protegidos Contra o uso indevido ou divulgação não autorizada, tomando as providências apropriadas para mantê-los em segurança. Na hipótese de vir a ser constadas situações que possam comprometer ou que efetivamente comprometam a segurança de seu banco de dados, as medidas cabíveis serão tomadas pela mesma.",
   },
@@ -94,11 +101,26 @@ const privacyDetails = [
   },
 ];
 
-export function InstitutionalTitle({ before, after }: { before: string; after: string }) {
+export function InstitutionalTitle({
+  before,
+  after,
+}: {
+  before: string;
+  after: string;
+}) {
   return (
-    <div className="mb-4 flex flex-wrap items-center gap-2 text-3xl font-bold text-zinc-900 sm:text-4xl" style={roundedFont}>
+    <div
+      className="mb-4 flex flex-wrap items-center gap-2 text-3xl font-bold text-zinc-900 sm:text-4xl"
+      style={roundedFont}
+    >
       <h1>{before}</h1>
-      <Image src="/api/assets/logoTrace" alt="" width={54} height={28} className="h-7 w-auto sm:h-8" />
+      <Image
+        src="/api/assets/logoTrace"
+        alt=""
+        width={54}
+        height={28}
+        className="h-7 w-auto sm:h-8"
+      />
       <h1>{after}</h1>
     </div>
   );
@@ -112,111 +134,181 @@ export function QuemSomosText({ framed = true }: { framed?: boolean }) {
   return (
     <div className={className} style={arialFont}>
       <p>
-        Bem-vindo ao Jornal Marabá; muito além de um portal de notícias por reunir informações com responsabilidade e
-        credibilidade, unindo opiniões e fatos com a comunicação verdadeira.
+        <strong>Bem-vindo ao Jornal Marabá;</strong> muito além de um portal de
+        notícias por reunir informações com responsabilidade e credibilidade,
+        unindo opiniões e fatos com a comunicação verdadeira.
       </p>
       <p>
-        Nosso compromisso é informar, inspirar e conectar a CIDADANIA, o COMÉRCIO e as NOTÍCIAS de maneira inovadora
-        para o município de Marabá - “Terra bendita”.
+        Nosso compromisso é{" "}
+        <strong>
+          informar, inspirar e conectar a CIDADANIA, o COMÉRCIO, e as NOTÍCIAS
+        </strong>{" "}
+        de maneira inovadora para o município de Marabá - “Terra bendita”.
       </p>
       <p>
-        A Mídia Moderna Comunicação Ltda, nossa agência de propaganda Plena, existe há 32 anos sendo composta por
-        jornalistas apaixonados no ofício da comunicação e por outros profissionais dedicados à excelência da criação,
-        planejamento e execução de campanhas publicitárias diversas.
+        A Mídia Moderna Comunicação Ltda, nossa agência de propaganda Plena,
+        existe há 32 anos sendo composta por jornalistas apaixonados no ofício
+        da <strong>comunicação</strong> e por outros profissionais dedicados à
+        excelência da criação, planejamento e execução de campanhas
+        publicitárias diversas.
       </p>
       <p>
-        Com sede no Rio de Janeiro e representatividades em Santa Catarina e São Paulo, iniciamos nova caminhada pela
-        região Norte por Marabá, no ano comemorativo dos 113 anos de emancipação, para em breve expandirmos nossas
-        atividades em comunicação para algumas das 143 cidades paraenses com a mesma operacionalidade aplicada em Marabá:
-        jornal impresso, portal de notícias, rádio e TV online.
-      </p>
-      <p>Entendemos que o importante não é o ponto de partida, mas sim a caminhada.</p>
-      <p>
-        Fortalecer o desenvolvimento local melhorando condições de cidadania, do comércio e notícias envolve novas ideias
-        e novos ideais com a modernidade, o profissionalismo e a qualidade favoráveis à inclusão em todos os setores e
-        segmentos da sociedade, sem riscos de “vedetismos” ou “travestidas” ações formando falsas opiniões contrárias ao
-        bem-estar da população.
+        Com sede no Rio de Janeiro e representatividades em Santa Catarina e São
+        Paulo, iniciamos nova caminhada pela região Norte por{" "}
+        <strong>Marabá,</strong> no ano comemorativo dos 113 anos de
+        emancipação, para em breve expandirmos nossas atividades em{" "}
+        <strong>comunicação</strong> para algumas das 143 cidades paraenses com
+        a mesma operacionalidade aplicada em Marabá:{" "}
+        <strong>jornal impresso, portal de notícias, rádio e TV online.</strong>
       </p>
       <p>
-        Unir forças e caminhar de mãos dadas viabiliza a qualidade de vida e crescimento socioeconômico de Marabá e de
-        outras cidades do Pará. Fazer dessa “missão dada, missão cumprida” com ordem e progresso à toda região é dever
-        de todos..
+        Entendemos que{" "}
+        <strong>
+          o importante não é o ponto de partida, mas sim a caminhada.
+        </strong>
       </p>
       <p>
-        CHEGOU UM NOVO TEMPO para a comunicação impressa, digital, radiofônica e televisiva de Marabá, diferenciando
-        einformando com qualidade, ética e respeito ao cidadão e empresariado, abordando conteúdos diversificados em mais
-        de 90% sobre Marabá, para os munícipes, o Brasil e o mundo via internet e distribuídos em 10.000 exemplares
-        GRATUITAMENTE para o comércio, instituições públicas, particulares, condomínios de casas e apartamentos.
+        Fortalecer o desenvolvimento local melhorando condições de{" "}
+        <strong>cidadania,</strong> do <strong>comércio</strong> e{" "}
+        <strong>notícias</strong> envolve{" "}
+        <strong>novas ideias e novos ideais,</strong> somadas com a{" "}
+        <strong>
+          modernidade,<strong> o </strong>profissionalismo
+        </strong>{" "}
+        e a <strong>qualidade</strong> favoráveis à inclusão em todos os setores
+        e segmentos da sociedade, sem riscos de “vedetismos” ou “travestidas”
+        ações formando falsas opiniões contrárias ao bem-estar da população.
       </p>
       <p>
-        Marabá merece QUALIDADE E SEGURANÇA INFORMATIVA de conteúdos essenciais, atuando na principal função da
-        comunicação: a credibilidade de mãos dadas com os esforços voltados ao crescimento social e empreendedor para o
-        município.
+        Unir forças e caminhar de mãos dadas viabiliza a qualidade de vida e
+        crescimento socioeconômico de Marabá e de outras cidades do Pará. Fazer
+        dessa “missão dada, missão cumprida” com ordem e progresso à toda região
+        é dever de todos..
       </p>
       <p>
-        Respeitar entidades governamentais observando as Leis e regulamentações vigentes, além do Código de Ética dos
-        Jornalistas Brasileiros aprovado no Congresso Nacional dos Jornalistas Profissionais da Associação Brasileira de
-        Imprensa (ABI) permite o livre acesso ao Poder Executivo, Poder Legislativo e Poder Judiciário com os princípios
+        <strong>CHEGOU UM NOVO TEMPO</strong> para a comunicação impressa,
+        digital, radiofônica e televisiva de Marabá, diferenciando einformando
+        com{" "}
+        <strong>qualidade, ética e respeito ao cidadão e empresariado,</strong>{" "}
+        abordando conteúdos diversificados em mais de{" "}
+        <strong>90% sobre Marabá,</strong> para os munícipes, o Brasil e o mundo
+        via internet e distribuídos em{" "}
+        <strong>10.000 exemplares GRATUITAMENTE</strong> para o comércio,
+        instituições públicas, particulares, condomínios de casas e
+        apartamentos.
+      </p>
+      <p>
+        Marabá merece <strong>QUALIDADE E SEGURANÇA INFORMATIVA</strong> de
+        conteúdos essenciais, atuando na principal função da comunicação: a{" "}
+        <strong>credibilidade</strong> de mãos dadas com os esforços voltados ao
+        crescimento social e empreendedor para o município.
+      </p>
+      <p>
+        Respeitar entidades governamentais observando as Leis e regulamentações
+        vigentes, além do <strong>Código de Ética</strong> dos Jornalistas
+        Brasileiros aprovado no Congresso Nacional dos Jornalistas Profissionais
+        da Associação Brasileira de Imprensa (ABI) permite o livre acesso ao
+        Poder Executivo, Poder Legislativo e Poder Judiciário com os princípios
         da pluralidade igualitária e sem prejuízos da verdade dos fatos.
       </p>
       <p>
-        Exposições de violência e crimes rotineiramente abordados Por outras mídias ou falsas notícias confundindo e
-        tentando desestabilizar conceitos religiosos, familiares e políticos adotados por bloguinhos de viés políticos e
-        dos likes de tostões visando a monetização ou ações de “jornalZismo” não constarão de leitura .
+        Exposições de violência e crimes rotineiramente abordados Por outras
+        mídias ou falsas notícias confundindo e tentando desestabilizar
+        conceitos religiosos, familiares e políticos adotados por{" "}
+        <strong>bloguinhos de viés políticos dos likes de tostões</strong>{" "}
+        visando a monetização ou ações de <strong>“jornalZismo”</strong> não
+        constarão de leitura .
       </p>
       <p>
-        Nossa linha editorial se compõe por FATOS possibilitando a ação e reação de ambos os lados da notícia com o
-        direito de defesa e réplica, construídos na base filosófica de Friedrich Nietzsche: “Contra fatos não restam
-        argumentos”...
+        Nossa linha editorial se compõe por FATOS possibilitando a ação e reação
+        de ambos os lados da notícia com o direito de defesa e réplica,
+        construídos na base filosófica de Friedrich Nietzsche:{" "}
+        <strong>“Contra fatos não restam argumentos”...</strong>
       </p>
-      <p>-“Sofrimentos”?</p>
+      <p>
+        <strong>-“Sofrimento”?</strong>
+      </p>
       <p>Só se for de saudades.</p>
-      <p>-“Matar” ou “morrer”?</p>
+      <p>
+        <strong>-“Matar” ou “morrer”?</strong>
+      </p>
       <p>Só se for de rir!</p>
-      <p>- “Guerras ou intrigas políticas”?</p>
       <p>
-        Nem as de travesseiro ou das “alianças de barbante“ a fim de prolongar o “poder” e vaidade dos que ocupam cargos
-        eletivos, estando e não sendo “ad aeternum” (“para sempre”) nessas funções.
-      </p>
-      <p>Esquecem do parágrafo único do artigo 1º da Constituição Federal de 1988:</p>
-      <p>
-        “Todo o poder emana do povo, que o exerce por meio de representantes eleitos ou diretamente, nos termos desta
-        Constituição”.
+        <strong>- “Guerras ou intrigas políticas”?</strong>
       </p>
       <p>
-        MARABÁ É GRANDE, merece respeito e união para maior desenvolvimento de ideais coletivos favorecendo o bem comum
-        de todos. Por isso a comunicação de massa não deve ser aliciadora de ideias e ideais mentirosos e tóxicos para a
-        sociedade honesta e trabalhadora.
+        Nem as de travesseiro ou das “alianças de barbante“ a fim de prolongar o
+        “poder” e vaidade dos que ocupam cargos eletivos, estando e não sendo
+        “ad aeternum” (“para sempre”) nessas funções.
       </p>
-      <p>Depende de NÓS.</p>
+      <p>
+        Esquecem do parágrafo único do artigo 1º da Constituição Federal de
+        1988:
+      </p>
+      <p>
+        “Todo o poder emana do povo, que o exerce por meio de representantes
+        eleitos ou diretamente, nos termos desta Constituição”.
+      </p>
+      <p>
+        MARABÁ É GRANDE, merece respeito e união para maior desenvolvimento de
+        ideais coletivos favorecendo o bem comum de todos. Por isso a
+        comunicação de massa não deve ser aliciadora de ideias e ideais
+        mentirosos e tóxicos para a sociedade honesta e trabalhadora.
+      </p>
+      <p>
+        <strong>Depende de NÓS.</strong>
+      </p>
       <p style={{ fontFamily: "Garamond, Georgia, serif" }}>Carlos Santos</p>
-      <p style={{ fontFamily: "Calibri, Arial, Helvetica, sans-serif" }}>Diretor - Fundador</p>
+      <p style={{ fontFamily: "Calibri, Arial, Helvetica, sans-serif" }}>
+        Diretor - Fundador
+      </p>
     </div>
   );
 }
 
 export function FaleConoscoText() {
   return (
-    <div className="mb-6 space-y-3 text-left leading-snug text-zinc-800" style={roundedFont}>
+    <div
+      className="mb-6 space-y-3 text-left leading-snug text-zinc-800"
+      style={roundedFont}
+    >
       <p>
-        Aqui você sugere matérias, faz denúncias e elogios para juntos fazermos do digital Jornal Marabá e do impresso
-        Jornal da Cidade Marabá os veículos de comunicação com responsabilidade, credibilidade e principalmente sua
-        participação!
+        Aqui <strong>você sugere matérias, faz denúncias e elogios</strong> para
+        juntos fazermos do digital <strong>Jornal Marabá</strong> e do impresso
+        <strong>Jornal da Cidade Marabá</strong> os veículos de comunicação com
+        responsabilidade, credibilidade e principalmente sua participação!
       </p>
       <p>Obtenha informações também sobre:</p>
-      <p>- Publicação de anúncios no jornal impresso JORNAL DA CIDADE MARABÁ;</p>
-      <p>- Publicação de anúncios no portal de notícias JORNAL MARABÁ</p>
-      <p>- Anúncios no Instagram e Facebook do Jornal Marabá;</p>
-      <p>- Produção de Panfletos para a DISTRIBUIÇÃO GRATUITA.</p>
       <p>
-        Os panfletos serão encartados no Jornal da Cidade Marabá para distribuição nos condomínios e comércios da cidade,
-        nos 10.000 exemplares.
+        <strong>
+          {" "}
+          - Publicação de anúncios no jornal impresso JORNAL DA CIDADE MARABÁ;
+        </strong>
       </p>
       <p>
-        Obtenha todo tipo de serviço publicitário e estruturação do marketing para empresas, desde o cartão de visitas
-        impresso ou digital, mídias ao ar livre, anúncios nas rádios e TVs à nível local, regional e nacional, além das
-        estratégias estruturais à palestras empresariais, assessoria e treinamento para diretórios políticos e
-        pré-candidatos as eleições do município, estado e governo federal.
+        <strong>
+          - Publicação de anúncios no portal de notícias JORNAL MARABÁ
+        </strong>
+      </p>
+      <p>
+        <strong>- Anúncios no Instagram e Facebook do Jornal Marabá;</strong>
+      </p>
+      <p>
+        <strong>- Produção de Panfletos para a DISTRIBUIÇÃO GRATUITA.</strong>
+      </p>
+      <p>
+        Os panfletos serão encartados no{" "}
+        <strong>Jornal da Cidade Marabá</strong> para{" "}
+        <strong>distribuição nos condomínios</strong> e comércios da cidade, nos
+        10.000 exemplares.
+      </p>
+      <p>
+        Obtenha todo tipo de serviço publicitário e estruturação do marketing
+        para empresas, desde o cartão de visitas impresso ou digital, mídias ao
+        ar livre, anúncios nas rádios e TVs à nível local, regional e nacional,
+        além das estratégias estruturais à palestras empresariais, assessoria e
+        treinamento para diretórios políticos e pré-candidatos as eleições do
+        município, estado e governo federal.
       </p>
     </div>
   );
@@ -224,35 +316,52 @@ export function FaleConoscoText() {
 
 export function PoliticaPrivacidadeText() {
   return (
-    <div className="space-y-4 rounded border border-zinc-300 bg-white p-6 text-left leading-snug text-zinc-900" style={tahomaFont}>
+    <div
+      className="space-y-4 rounded border border-zinc-300 bg-white p-6 text-left leading-snug text-zinc-900"
+      style={tahomaFont}
+    >
       <p>
-        A Lei Geral de Proteção de Dados (Lei 13.709/2018, “LGPD”), autoriza o tratamento de Dados com base em situações
-        legais específicas. Em respeito à legislação, o Jornal Marabá tratará os seus Dados de acordo com as seguintes
-        bases legais, conforme o caso concreto:
-      </p>
-      <p>Consentimento</p>
-      <p>
-        Quando você concorda com o tratamento dos dados de forma expressa para uma finalidade específica. Nesta hipótese,
-        o consentimento poderá ser revogado a qualquer tempo por solicitação de cadastro do Jornal Marabá que você tenha
-        (conforme aplicável).
-      </p>
-      <p>Interesse legítimo</p>
-      <p>
-        Quando o Jornal Marabá e/ou Parceiros têm (em) interesse legítimo na utilização de seus dados, nas hipóteses
-        legalmente previstas, sempre respeitados seus direitos fundamentais e sua expectativa legítima.
+        A Lei Geral de Proteção de Dados (Lei 13.709/2018, “LGPD”), autoriza o
+        tratamento de Dados com base em situações legais específicas. Em
+        respeito à legislação, o <strong>Jornal Marabá</strong> tratará os seus
+        Dados de acordo com as seguintes bases legais, conforme o caso concreto:
       </p>
       <p>
-        Este website adota a presente Política de Privacidade para fins de regular o tratamento e a proteção dispensados
-        aos dados pessoais e informações que os usuários venham a prestar, por suas livres e espontâneas vontades, ao
-        participarem de certas ações, acessarem a certos conteúdos e/ou contratarem eventuais produtos e serviços, por
-        meio deste portal de Internet, provido pela agência plena de propaganda Mídia Moderna Comunicação Ltda, pessoa
-        jurídica de direito privado, doravante referida apenas como “JORNAL MARABÁ”.
+        <strong>Consentimento</strong>
       </p>
       <p>
-        ANTES DE ENVIAR INFORMAÇÕES, PREENCHER CADASTROS OU COMPARTILHAR CONTEÚDOS, POR MEIO DO PORTAL, VOCÊ DEVE ESTAR
-        DE ACORDO COM A PRESENTE POLÍTICA DE PRIVACIDADE. SE VOCÊ NÃO CONCORDAR COM A PRESENTE POLÍTICA DE PRIVACIDADE,
-        NÃO DEVERÁ DAR CONTINUIDADE À TRANSMISSÃO OU O ENVIO DE DADOS PESSOAIS E DEMAIS INFORMAÇÕES AO JORNAL MARABÁ. A
-        TRANSMISSÃO OU O ENVIO SERÃO CONSIDERADOS COMO ACEITE TOTAL DAS CONDIÇÕES REGULATÓRIAS AQUI DEFINIDAS.
+        Quando você concorda com o tratamento dos dados de forma expressa para
+        uma finalidade específica. Nesta hipótese, o consentimento poderá ser
+        revogado a qualquer tempo por solicitação de cadastro do Jornal Marabá
+        que você tenha (conforme aplicável).
+      </p>
+      <p>
+        <strong>Interesse legítimo</strong>
+      </p>
+      <p>
+        Quando o <strong>Jornal Marabá</strong> e/ou Parceiros têm (em)
+        interesse legítimo na utilização de seus dados, nas hipóteses legalmente
+        previstas, sempre respeitados seus direitos fundamentais e sua
+        expectativa legítima.
+      </p>
+      <p>
+        Este website adota a presente Política de Privacidade para fins de
+        regular o tratamento e a proteção dispensados aos dados pessoais e
+        informações que os usuários venham a prestar, por suas livres e
+        espontâneas vontades, ao participarem de certas ações, acessarem a
+        certos conteúdos e/ou contratarem eventuais produtos e serviços, por
+        meio deste portal de Internet, provido pela agência plena de propaganda
+        Mídia Moderna Comunicação Ltda, pessoa jurídica de direito privado,
+        doravante referida apenas como <strong>JORNAL MARABÁ</strong>.
+      </p>
+      <p>
+        ANTES DE ENVIAR INFORMAÇÕES, PREENCHER CADASTROS OU COMPARTILHAR
+        CONTEÚDOS, POR MEIO DO PORTAL, VOCÊ DEVE ESTAR DE ACORDO COM A PRESENTE
+        POLÍTICA DE PRIVACIDADE. SE VOCÊ NÃO CONCORDAR COM A PRESENTE POLÍTICA
+        DE PRIVACIDADE, NÃO DEVERÁ DAR CONTINUIDADE À TRANSMISSÃO OU O ENVIO DE
+        DADOS PESSOAIS E DEMAIS INFORMAÇÕES AO <strong>JORNAL MARABÁ</strong>. A
+        TRANSMISSÃO OU O ENVIO SERÃO CONSIDERADOS COMO ACEITE TOTAL DAS
+        CONDIÇÕES REGULATÓRIAS AQUI DEFINIDAS.
       </p>
       {privacyDetails.map((item, index) =>
         item.title ? (
